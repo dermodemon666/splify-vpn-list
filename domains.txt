@@ -5,10 +5,24 @@ protonmail.ch
 protonvpn.com
 protondrive.com
 protoncalendar.com
+pm.me
+account.proton.me
+mail.proton.me
+drive.proton.me
+calendar.proton.me
+pass.proton.me
+api.proton.me
+vpn-api.proton.me
+api.protonmail.ch
 
 # AnyDesk
 anydesk.com
 anydesk.net
+anydesk.com
+net.anydesk.com
+anydesk.net
+boot-01.net.anydesk.com
+boot-02.net.anydesk.com
 
 # WhatsApp
 whatsapp.com
@@ -44,9 +58,15 @@ testufo.com
 # 9GAG
 9gag.com
 9gag.net
+9cache.com
 
 # Reddit
 reddit.com
 redditmedia.com
 redditstatic.com
 redd.it
+i.redd.it
+v.redd.it
+old.reddit.com
+www.reddit.com
+
