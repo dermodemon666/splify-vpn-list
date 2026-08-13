@@ -5,6 +5,12 @@ on:
     # Every day at 03:17 UTC
     - cron: "17 3 * * *"
 
+  # Regenerate immediately when the generator changes.
+  push:
+    paths:
+      - generate.sh
+      - .github/workflows/update.yml
+
   # Allow manual execution from GitHub Actions
   workflow_dispatch:
 
@@ -22,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y curl dnsutils
+          sudo apt-get install -y curl dnsutils python3
 
       - name: Generate splify.lst
         run: |
@@ -31,12 +37,8 @@ jobs:
 
       - name: Show Discord coverage
         run: |
-          echo "Checking Discord / Cloudflare ranges..."
-
-          grep -E \
-            '^(104\.29\.136\.204/32|162\.159\.128\.232/31|104\.16\.0\.0/12)' \
-            splify.lst || true
-
+          echo "Checking Discord / Voice coverage..."
+          grep -E '^(162\.159\.128\.232/31|162\.159\.128\.232/30)' splify.lst || true
           echo
           echo "Total entries:"
           grep -Ec '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' splify.lst
