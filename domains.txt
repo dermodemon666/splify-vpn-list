@@ -1,28 +1,3 @@
-# YouTube
-youtube.com
-www.youtube.com
-m.youtube.com
-youtu.be
-youtube-nocookie.com
-youtubei.googleapis.com
-youtube.googleapis.com
-googlevideo.com
-ytimg.com
-
-# Telegram
-telegram.org
-t.me
-telegram.me
-telegram.dog
-
-# Discord
-discord.com
-discord.gg
-discordapp.com
-discordapp.net
-discord.media
-discordcdn.com
-
 # Proton
 proton.me
 protonmail.com
