@@ -26,86 +26,69 @@ echo
 
 # ------------------------------------------------------------
 # Original ipsum list
-#
-# This is the base list. splify.lst is deliberately generated as
-# a superset of it: the project-specific sources below are added
-# on top, rather than replacing or modifying the original list.
 # ------------------------------------------------------------
-
 echo "Downloading original ipsum list..."
-
 curl -fsSL "$IPSUM_URL" > "$IPSUM"
 
 # ------------------------------------------------------------
-# Download YouTube
+# YouTube
 # ------------------------------------------------------------
-
 echo "Downloading YouTube list..."
-
 curl -fsSL \
     "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/youtube.lst" \
     > "$YT"
 
 # ------------------------------------------------------------
-# Download Telegram
+# Telegram
 # ------------------------------------------------------------
-
 echo "Downloading Telegram list..."
-
 curl -fsSL \
     "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/telegram.lst" \
     > "$TG"
 
 # ------------------------------------------------------------
-# Discord — existing large community list
+# Discord IP sources
 # ------------------------------------------------------------
-
 echo "Downloading Discord IP list..."
-
 curl -fsSL \
     "https://raw.githubusercontent.com/fildunsky/clash_discord/main/discord-ip.yaml" |
     sed -n 's/^[[:space:]]*-[[:space:]]*IP-CIDR,\([^,]*\).*$/\1/p' |
     grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' |
-    sort -u \
-    > "$DC"
+    sort -u > "$DC"
 
-# ------------------------------------------------------------
-# Discord Voice — dedicated dynamically maintained list
-# ------------------------------------------------------------
 echo "Downloading Discord Voice list..."
-
 curl -fsSL \
     "https://raw.githubusercontent.com/123jjck/cdn-ip-ranges/main/discord-voice/discord-voice_plain_ipv4.txt" |
     grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' |
-    sort -u \
-    > "$DCVOICE"
+    sort -u > "$DCVOICE"
 
 # ------------------------------------------------------------
-# Cloudflare IPv4
-#
-# Discord moved >80% of voice/video traffic to Cloudflare Edge.
-# We intentionally include ALL Cloudflare IPv4 ranges because
-# maximum Discord coverage is preferred over precision.
+# Discord Voice/Video now predominantly runs on Cloudflare Edge.
+# Keep the current Cloudflare IPv4 feed in the generated list so
+# Discord Go Live / video traffic is not lost when Discord changes
+# edge addresses. This is deliberately a live feed, not a hardcoded
+# snapshot.
 # ------------------------------------------------------------
 echo "Downloading Cloudflare IPv4 ranges..."
-
 curl -fsSL \
     "https://www.cloudflare.com/ips-v4" |
     grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' |
-    sort -u \
-    > "$CF"
+    sort -u > "$CF"
 
 # ------------------------------------------------------------
-# Resolve Discord-related domains
+# Resolve service domains to IPv4.
+#
+# AnyDesk does not publish a stable, dedicated IPv4 CIDR feed. Its
+# official firewall documentation instead requires *.net.anydesk.com.
+# We therefore resolve the service domains at generation time rather
+# than inventing static AnyDesk CIDRs that can go stale.
 # ------------------------------------------------------------
 echo
-echo "Resolving Discord domains..."
+echo "Resolving Discord and AnyDesk service domains..."
 
 resolve_domain() {
     domain="$1"
-
     echo "  $domain" >&2
-
     dig @1.1.1.1 +short A "$domain" 2>/dev/null || true
     dig @8.8.8.8 +short A "$domain" 2>/dev/null || true
     dig @9.9.9.9 +short A "$domain" 2>/dev/null || true
@@ -133,7 +116,19 @@ discord.store
 discordstatus.com
 "
 
-for domain in $DISCORD_DOMAINS; do
+# Official AnyDesk firewall requirement: *.net.anydesk.com.
+# Include the apex/service names most commonly used by clients.
+ANYDESK_DOMAINS="
+net.anydesk.com
+anydesk.com
+www.anydesk.com
+relay.net.anydesk.com
+api.net.anydesk.com
+client.net.anydesk.com
+my.anydesk.com
+"
+
+for domain in $DISCORD_DOMAINS $ANYDESK_DOMAINS; do
     resolve_domain "$domain" >> "$DNS"
 done
 
@@ -155,17 +150,13 @@ done
 # Normalize DNS results
 # ------------------------------------------------------------
 awk '
-    /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ {
-        print $0 "/32"
-    }
-' "$DNS" |
-sort -u > "$TMP/dns-clean.lst"
+    /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ { print $0 "/32" }
+' "$DNS" | sort -u > "$TMP/dns-clean.lst"
 
 # ------------------------------------------------------------
 # Combine everything
 # ------------------------------------------------------------
-# The original ipsum list is intentionally included first as the
-# base set. Project-specific sources are then added on top.
+# Original ipsum remains the base list. Everything else is additive.
 cat \
     "$IPSUM" \
     "$YT" \
@@ -177,22 +168,17 @@ cat \
 awk '
     /^[[:space:]]*#/ { next }
     /^[[:space:]]*$/ { next }
-
     /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\/[0-9]+$/ {
-
         # Google DNS must ALWAYS remain direct.
         if ($0 == "8.8.4.0/24") next
         if ($0 == "8.8.8.0/24") next
-
         print
     }
-' |
-sort -u > "$ALL"
+' | sort -u > "$ALL"
 
 # ------------------------------------------------------------
 # Statistics
 # ------------------------------------------------------------
-
 IPSUM_COUNT=$(grep -Ec '^[0-9]+\.' "$IPSUM" || true)
 YT_COUNT=$(grep -Ec '^[0-9]+\.' "$YT" || true)
 TG_COUNT=$(grep -Ec '^[0-9]+\.' "$TG" || true)
@@ -205,20 +191,16 @@ TOTAL=$(wc -l < "$ALL" | tr -d ' ')
 # ------------------------------------------------------------
 # Verify exclusions
 # ------------------------------------------------------------
-
 echo
 echo "========== EXCLUDE CHECK =========="
-
 if grep -qx '8.8.4.0/24' "$ALL"; then
     echo "ERROR: 8.8.4.0/24 is still present!"
     exit 1
 fi
-
 if grep -qx '8.8.8.0/24' "$ALL"; then
     echo "ERROR: 8.8.8.0/24 is still present!"
     exit 1
 fi
-
 echo "OK: Google DNS ranges excluded"
 echo "===================================="
 
@@ -236,7 +218,7 @@ echo "===================================="
     echo "# Discord source:       $DC_COUNT entries"
     echo "# Discord Voice source: $DCVOICE_COUNT entries"
     echo "# Cloudflare IPv4:      $CF_COUNT entries"
-    echo "# DNS resolved IPv4:    $DNS_COUNT entries"
+    echo "# Discord/AnyDesk DNS:  $DNS_COUNT entries"
     echo "# Final unique IPv4:    $TOTAL"
     echo "#"
     echo "# Sources:"
@@ -245,16 +227,11 @@ echo "===================================="
     echo "# fildunsky/clash_discord"
     echo "# 123jjck/cdn-ip-ranges/discord-voice"
     echo "# Cloudflare IPv4"
-    echo "# Discord domain DNS resolution"
+    echo "# Discord service DNS"
+    echo "# AnyDesk service DNS (*.net.anydesk.com)"
     echo
-
     cat "$ALL"
-
 } > "$OUT"
-
-# ------------------------------------------------------------
-# Summary
-# ------------------------------------------------------------
 
 echo
 echo "========== SUMMARY =========="
@@ -264,6 +241,6 @@ echo "Telegram:         $TG_COUNT"
 echo "Discord:          $DC_COUNT"
 echo "Discord Voice:    $DCVOICE_COUNT"
 echo "Cloudflare IPv4:  $CF_COUNT"
-echo "DNS IPv4:         $DNS_COUNT"
+echo "Discord/AnyDesk:  $DNS_COUNT"
 echo "Final unique:     $TOTAL"
 echo "============================="
