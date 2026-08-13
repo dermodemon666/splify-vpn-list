@@ -18,9 +18,7 @@ api.protonmail.ch
 # AnyDesk
 anydesk.com
 anydesk.net
-anydesk.com
 net.anydesk.com
-anydesk.net
 boot-01.net.anydesk.com
 boot-02.net.anydesk.com
 
