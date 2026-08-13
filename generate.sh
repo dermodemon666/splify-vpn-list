@@ -10,13 +10,10 @@ YT="$TMP/youtube.lst"
 TG="$TMP/telegram.lst"
 DC="$TMP/discord.lst"
 DCVOICE="$TMP/discord-voice.lst"
-CF="$TMP/cloudflare.lst"
 DNS="$TMP/dns.lst"
 ALL="$TMP/all.lst"
 
-cleanup() {
-    rm -rf "$TMP"
-}
+cleanup() { rm -rf "$TMP"; }
 trap cleanup EXIT INT TERM
 
 echo "======================================"
@@ -24,31 +21,19 @@ echo " splify IP list generator"
 echo "======================================"
 echo
 
-# ------------------------------------------------------------
-# Original ipsum list
-# ------------------------------------------------------------
 echo "Downloading original ipsum list..."
 curl -fsSL "$IPSUM_URL" > "$IPSUM"
 
-# ------------------------------------------------------------
-# YouTube
-# ------------------------------------------------------------
 echo "Downloading YouTube list..."
 curl -fsSL \
     "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/youtube.lst" \
     > "$YT"
 
-# ------------------------------------------------------------
-# Telegram
-# ------------------------------------------------------------
 echo "Downloading Telegram list..."
 curl -fsSL \
     "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/telegram.lst" \
     > "$TG"
 
-# ------------------------------------------------------------
-# Discord IP sources
-# ------------------------------------------------------------
 echo "Downloading Discord IP list..."
 curl -fsSL \
     "https://raw.githubusercontent.com/fildunsky/clash_discord/main/discord-ip.yaml" |
@@ -62,30 +47,16 @@ curl -fsSL \
     grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' |
     sort -u > "$DCVOICE"
 
-# ------------------------------------------------------------
-# Discord Voice/Video now predominantly runs on Cloudflare Edge.
-# Keep the current Cloudflare IPv4 feed in the generated list so
-# Discord Go Live / video traffic is not lost when Discord changes
-# edge addresses. This is deliberately a live feed, not a hardcoded
-# snapshot.
-# ------------------------------------------------------------
-echo "Downloading Cloudflare IPv4 ranges..."
-curl -fsSL \
-    "https://www.cloudflare.com/ips-v4" |
-    grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' |
-    sort -u > "$CF"
+# Do NOT add the complete Cloudflare IPv4 feed here. Discord voice/video now
+# uses Cloudflare Edge extensively, but routing every Cloudflare address through
+# WARP would also catch unrelated sites and can make streaming/CDN traffic worse.
+# The Discord-specific sources above plus the original ipsum list are the narrow
+# coverage we actually want. Discord itself confirms that >80% of voice/video
+# traffic runs on Cloudflare Edge, so the Discord-specific ranges are preferred
+# over the entire Cloudflare address space.
 
-# ------------------------------------------------------------
-# Resolve service domains to IPv4.
-#
-# AnyDesk does not publish a stable, dedicated IPv4 CIDR feed. Its
-# official firewall documentation instead requires *.net.anydesk.com.
-# We therefore resolve the service domains at generation time rather
-# than inventing static AnyDesk CIDRs that can go stale.
-# ------------------------------------------------------------
 echo
 echo "Resolving Discord and AnyDesk service domains..."
-
 resolve_domain() {
     domain="$1"
     echo "  $domain" >&2
@@ -116,8 +87,9 @@ discord.store
 discordstatus.com
 "
 
-# Official AnyDesk firewall requirement: *.net.anydesk.com.
-# Include the apex/service names most commonly used by clients.
+# AnyDesk officially recommends whitelisting *.net.anydesk.com. There is no
+# stable published IPv4 CIDR feed, so resolve representative service names at
+# generation time instead of inventing broad static ranges.
 ANYDESK_DOMAINS="
 net.anydesk.com
 anydesk.com
@@ -132,84 +104,73 @@ for domain in $DISCORD_DOMAINS $ANYDESK_DOMAINS; do
     resolve_domain "$domain" >> "$DNS"
 done
 
-# ------------------------------------------------------------
-# Validate source lists
-# ------------------------------------------------------------
-for file in "$IPSUM" "$YT" "$TG" "$DC" "$DCVOICE" "$CF"; do
-    if ! grep -Eq \
-        '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' \
-        "$file"
-    then
-        echo "ERROR: source list contains no valid IPv4 CIDRs:"
-        echo "$file"
+for file in "$IPSUM" "$YT" "$TG" "$DC" "$DCVOICE"; do
+    if ! grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' "$file"; then
+        echo "ERROR: source list contains no valid IPv4 CIDRs: $file"
         exit 1
     fi
 done
 
-# ------------------------------------------------------------
-# Normalize DNS results
-# ------------------------------------------------------------
 awk '
     /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ { print $0 "/32" }
 ' "$DNS" | sort -u > "$TMP/dns-clean.lst"
 
-# ------------------------------------------------------------
-# Combine everything
-# ------------------------------------------------------------
-# Original ipsum remains the base list. Everything else is additive.
-cat \
-    "$IPSUM" \
-    "$YT" \
-    "$TG" \
-    "$DC" \
-    "$DCVOICE" \
-    "$CF" \
-    "$TMP/dns-clean.lst" |
+# Build the exact union, then collapse contained/adjacent prefixes. This is
+# lossless: it does not widen coverage. It only removes duplicates and prefixes
+# already covered by a larger prefix from another source.
+cat "$IPSUM" "$YT" "$TG" "$DC" "$DCVOICE" "$TMP/dns-clean.lst" |
 awk '
     /^[[:space:]]*#/ { next }
     /^[[:space:]]*$/ { next }
-    /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\/[0-9]+$/ {
-        # Google DNS must ALWAYS remain direct.
-        if ($0 == "8.8.4.0/24") next
-        if ($0 == "8.8.8.0/24") next
-        print
-    }
-' | sort -u > "$ALL"
+    /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\/[0-9]+$/ { print }
+' | sort -u > "$TMP/raw.lst"
 
-# ------------------------------------------------------------
-# Statistics
-# ------------------------------------------------------------
+python3 - "$TMP/raw.lst" "$ALL" <<'PY'
+import ipaddress
+import sys
+
+src, dst = sys.argv[1:]
+networks = []
+with open(src, encoding="utf-8") as f:
+    for line in f:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            n = ipaddress.ip_network(line, strict=False)
+        except ValueError:
+            continue
+        # These DNS ranges must never be sent through WARP by this list.
+        if n.subnet_of(ipaddress.ip_network("8.8.8.0/24")):
+            continue
+        if n.subnet_of(ipaddress.ip_network("8.8.4.0/24")):
+            continue
+        networks.append(n)
+
+collapsed = ipaddress.collapse_addresses(networks)
+with open(dst, "w", encoding="utf-8") as out:
+    for n in collapsed:
+        if n.version == 4:
+            out.write(f"{n}\n")
+PY
+
 IPSUM_COUNT=$(grep -Ec '^[0-9]+\.' "$IPSUM" || true)
 YT_COUNT=$(grep -Ec '^[0-9]+\.' "$YT" || true)
 TG_COUNT=$(grep -Ec '^[0-9]+\.' "$TG" || true)
 DC_COUNT=$(grep -Ec '^[0-9]+\.' "$DC" || true)
 DCVOICE_COUNT=$(grep -Ec '^[0-9]+\.' "$DCVOICE" || true)
-CF_COUNT=$(grep -Ec '^[0-9]+\.' "$CF" || true)
 DNS_COUNT=$(grep -Ec '^[0-9]+\.' "$TMP/dns-clean.lst" || true)
 TOTAL=$(wc -l < "$ALL" | tr -d ' ')
 
-# ------------------------------------------------------------
-# Verify exclusions
-# ------------------------------------------------------------
-echo
-echo "========== EXCLUDE CHECK =========="
-if grep -qx '8.8.4.0/24' "$ALL"; then
-    echo "ERROR: 8.8.4.0/24 is still present!"
+if grep -qE '^8\.8\.(4|8)\.0/24$' "$ALL"; then
+    echo "ERROR: Google DNS range is still present"
     exit 1
 fi
-if grep -qx '8.8.8.0/24' "$ALL"; then
-    echo "ERROR: 8.8.8.0/24 is still present!"
-    exit 1
-fi
-echo "OK: Google DNS ranges excluded"
-echo "===================================="
 
-# ------------------------------------------------------------
-# Generate final list
-# ------------------------------------------------------------
 {
     echo "# splify custom IP list"
     echo "# Generated automatically"
+    echo "# Exact union + lossless CIDR aggregation; no broad Cloudflare feed"
     echo "#"
     echo "# Original ipsum source: $IPSUM_URL"
     echo "# Original ipsum:       $IPSUM_COUNT entries"
@@ -217,16 +178,14 @@ echo "===================================="
     echo "# Telegram source:      $TG_COUNT entries"
     echo "# Discord source:       $DC_COUNT entries"
     echo "# Discord Voice source: $DCVOICE_COUNT entries"
-    echo "# Cloudflare IPv4:      $CF_COUNT entries"
     echo "# Discord/AnyDesk DNS:  $DNS_COUNT entries"
-    echo "# Final unique IPv4:    $TOTAL"
+    echo "# Final aggregated IPv4: $TOTAL"
     echo "#"
     echo "# Sources:"
     echo "# 1andrevich/Re-filter-lists (ipsum.lst)"
-    echo "# xyzmean/ru-bypass-ipsets"
+    echo "# xyzmean/ru-bypass-ipsets (YouTube/Telegram)"
     echo "# fildunsky/clash_discord"
     echo "# 123jjck/cdn-ip-ranges/discord-voice"
-    echo "# Cloudflare IPv4"
     echo "# Discord service DNS"
     echo "# AnyDesk service DNS (*.net.anydesk.com)"
     echo
@@ -240,7 +199,6 @@ echo "YouTube:          $YT_COUNT"
 echo "Telegram:         $TG_COUNT"
 echo "Discord:          $DC_COUNT"
 echo "Discord Voice:    $DCVOICE_COUNT"
-echo "Cloudflare IPv4:  $CF_COUNT"
 echo "Discord/AnyDesk:  $DNS_COUNT"
-echo "Final unique:     $TOTAL"
+echo "Final aggregated: $TOTAL"
 echo "============================="
