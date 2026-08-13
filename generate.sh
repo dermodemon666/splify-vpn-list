@@ -36,7 +36,8 @@ curl -fsSL \
 
 echo "Downloading Discord list..."
 curl -fsSL \
-    "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/discord.lst" \
+    "https://raw.githubusercontent.com/fildunsky/clash_discord/main/discord-ip.yaml" |
+    sed -n 's/^[[:space:]]*-[[:space:]]*IP-CIDR,\([^,]*\).*$/\1/p' \
     > "$DC"
 
 # ------------------------------------------------------------
