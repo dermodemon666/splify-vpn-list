@@ -1,0 +1,77 @@
+# YouTube
+youtube.com
+www.youtube.com
+m.youtube.com
+youtu.be
+youtube-nocookie.com
+youtubei.googleapis.com
+youtube.googleapis.com
+googlevideo.com
+ytimg.com
+
+# Telegram
+telegram.org
+t.me
+telegram.me
+telegram.dog
+
+# Discord
+discord.com
+discord.gg
+discordapp.com
+discordapp.net
+discord.media
+discordcdn.com
+
+# Proton
+proton.me
+protonmail.com
+protonmail.ch
+protonvpn.com
+protondrive.com
+protoncalendar.com
+
+# AnyDesk
+anydesk.com
+anydesk.net
+
+# WhatsApp
+whatsapp.com
+whatsapp.net
+wa.me
+
+# Facebook / Meta
+facebook.com
+facebook.net
+fb.com
+fbcdn.net
+messenger.com
+
+# Instagram
+instagram.com
+cdninstagram.com
+
+# X / Twitter
+x.com
+twitter.com
+t.co
+twimg.com
+
+# RuTracker
+rutracker.org
+rutracker.net
+
+# Blur Busters
+blurbusters.com
+forums.blurbusters.com
+testufo.com
+
+# 9GAG
+9gag.com
+9gag.net
+
+# Reddit
+reddit.com
+redditmedia.com
+redditstatic.com
+redd.it
