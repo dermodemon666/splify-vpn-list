@@ -1,9 +1,12 @@
 name: Update splify IP list
 
 on:
-  workflow_dispatch:
   schedule:
+    # Every day at 03:17 UTC
     - cron: "17 3 * * *"
+
+  # Allow manual execution from GitHub Actions
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,25 +16,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y dnsutils
+          sudo apt-get install -y curl dnsutils
 
-      - name: Generate list
+      - name: Generate splify.lst
         run: |
-          chmod +x generate.sh
+          chmod +x ./generate.sh
           ./generate.sh
 
-      - name: Check generated list
+      - name: Show Discord coverage
         run: |
-          test -s splify.lst
-          grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' splify.lst
+          echo "Checking Discord / Cloudflare ranges..."
 
-      - name: Commit changes
+          grep -E \
+            '^(104\.29\.136\.204/32|162\.159\.128\.232/31|104\.16\.0\.0/12)' \
+            splify.lst || true
+
+          echo
+          echo "Total entries:"
+          grep -Ec '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' splify.lst
+
+      - name: Commit updated list
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -40,8 +50,7 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No changes."
-            exit 0
+          else
+            git commit -m "chore: update splify IP list"
+            git push
           fi
-
-          git commit -m "Update splify IP list"
-          git push
