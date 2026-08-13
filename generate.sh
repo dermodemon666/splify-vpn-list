@@ -2,8 +2,10 @@
 set -eu
 
 OUT="splify.lst"
+IPSUM_URL="https://raw.githubusercontent.com/1andrevich/Re-filter-lists/master/ipsum.lst"
 
 TMP="$(mktemp -d)"
+IPSUM="$TMP/ipsum.lst"
 YT="$TMP/youtube.lst"
 TG="$TMP/telegram.lst"
 DC="$TMP/discord.lst"
@@ -21,6 +23,18 @@ echo "======================================"
 echo " splify IP list generator"
 echo "======================================"
 echo
+
+# ------------------------------------------------------------
+# Original ipsum list
+#
+# This is the base list. splify.lst is deliberately generated as
+# a superset of it: the project-specific sources below are added
+# on top, rather than replacing or modifying the original list.
+# ------------------------------------------------------------
+
+echo "Downloading original ipsum list..."
+
+curl -fsSL "$IPSUM_URL" > "$IPSUM"
 
 # ------------------------------------------------------------
 # Download YouTube
@@ -58,7 +72,6 @@ curl -fsSL \
 # ------------------------------------------------------------
 # Discord Voice — dedicated dynamically maintained list
 # ------------------------------------------------------------
-
 echo "Downloading Discord Voice list..."
 
 curl -fsSL \
@@ -74,7 +87,6 @@ curl -fsSL \
 # We intentionally include ALL Cloudflare IPv4 ranges because
 # maximum Discord coverage is preferred over precision.
 # ------------------------------------------------------------
-
 echo "Downloading Cloudflare IPv4 ranges..."
 
 curl -fsSL \
@@ -86,7 +98,6 @@ curl -fsSL \
 # ------------------------------------------------------------
 # Resolve Discord-related domains
 # ------------------------------------------------------------
-
 echo
 echo "Resolving Discord domains..."
 
@@ -129,8 +140,7 @@ done
 # ------------------------------------------------------------
 # Validate source lists
 # ------------------------------------------------------------
-
-for file in "$YT" "$TG" "$DC" "$DCVOICE" "$CF"; do
+for file in "$IPSUM" "$YT" "$TG" "$DC" "$DCVOICE" "$CF"; do
     if ! grep -Eq \
         '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' \
         "$file"
@@ -144,7 +154,6 @@ done
 # ------------------------------------------------------------
 # Normalize DNS results
 # ------------------------------------------------------------
-
 awk '
     /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ {
         print $0 "/32"
@@ -155,8 +164,10 @@ sort -u > "$TMP/dns-clean.lst"
 # ------------------------------------------------------------
 # Combine everything
 # ------------------------------------------------------------
-
+# The original ipsum list is intentionally included first as the
+# base set. Project-specific sources are then added on top.
 cat \
+    "$IPSUM" \
     "$YT" \
     "$TG" \
     "$DC" \
@@ -182,6 +193,7 @@ sort -u > "$ALL"
 # Statistics
 # ------------------------------------------------------------
 
+IPSUM_COUNT=$(grep -Ec '^[0-9]+\.' "$IPSUM" || true)
 YT_COUNT=$(grep -Ec '^[0-9]+\.' "$YT" || true)
 TG_COUNT=$(grep -Ec '^[0-9]+\.' "$TG" || true)
 DC_COUNT=$(grep -Ec '^[0-9]+\.' "$DC" || true)
@@ -213,11 +225,12 @@ echo "===================================="
 # ------------------------------------------------------------
 # Generate final list
 # ------------------------------------------------------------
-
 {
     echo "# splify custom IP list"
     echo "# Generated automatically"
     echo "#"
+    echo "# Original ipsum source: $IPSUM_URL"
+    echo "# Original ipsum:       $IPSUM_COUNT entries"
     echo "# YouTube source:       $YT_COUNT entries"
     echo "# Telegram source:      $TG_COUNT entries"
     echo "# Discord source:       $DC_COUNT entries"
@@ -227,6 +240,7 @@ echo "===================================="
     echo "# Final unique IPv4:    $TOTAL"
     echo "#"
     echo "# Sources:"
+    echo "# 1andrevich/Re-filter-lists (ipsum.lst)"
     echo "# xyzmean/ru-bypass-ipsets"
     echo "# fildunsky/clash_discord"
     echo "# 123jjck/cdn-ip-ranges/discord-voice"
@@ -244,6 +258,7 @@ echo "===================================="
 
 echo
 echo "========== SUMMARY =========="
+echo "Original ipsum:   $IPSUM_COUNT"
 echo "YouTube:          $YT_COUNT"
 echo "Telegram:         $TG_COUNT"
 echo "Discord:          $DC_COUNT"
