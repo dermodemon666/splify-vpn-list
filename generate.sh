@@ -3,76 +3,97 @@ set -eu
 
 OUT="splify.lst"
 TMP="$(mktemp)"
-TMP2="$(mktemp)"
+YT="$(mktemp)"
+TG="$(mktemp)"
+DC="$(mktemp)"
+DNS="$(mktemp)"
+ALL="$(mktemp)"
 
 cleanup() {
-    rm -f "$TMP" "$TMP2"
+    rm -f "$TMP" "$YT" "$TG" "$DC" "$DNS" "$ALL"
 }
 trap cleanup EXIT
 
-echo "# splify custom IP list" > "$TMP"
-echo "# Generated automatically. Do not edit manually." >> "$TMP"
-echo "# Updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> "$TMP"
-
-echo "# xyzmean YouTube" >> "$TMP"
+echo "Downloading YouTube list..."
 curl -fsSL \
     "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/youtube.lst" \
-    >> "$TMP"
+    > "$YT"
 
-echo "# xyzmean Telegram" >> "$TMP"
+echo "Downloading Telegram list..."
 curl -fsSL \
     "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/telegram.lst" \
-    >> "$TMP"
+    > "$TG"
 
-echo "# xyzmean Discord" >> "$TMP"
+echo "Downloading Discord list..."
 curl -fsSL \
     "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/discord.lst" \
-    >> "$TMP"
+    > "$DC"
 
-echo "# Resolve custom domains" >> "$TMP"
+echo "Resolving custom domains..."
 
 while IFS= read -r domain; do
     case "$domain" in
         ""|\#*) continue ;;
     esac
 
-    echo "# $domain" >> "$TMP"
+    echo "  $domain"
 
-    # IPv4
-    if command -v dig >/dev/null 2>&1; then
-        dig +short A "$domain" |
-            awk '/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ {print $0 "/32"}' \
-            >> "$TMP" || true
-    else
-        getent ahostsv4 "$domain" 2>/dev/null |
-            awk '{print $1 "/32"}' |
-            sort -u \
-            >> "$TMP" || true
-    fi
+    dig +short A "$domain" 2>/dev/null |
+        awk '
+            /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ {
+                print $0 "/32"
+            }
+        ' >> "$DNS" || true
 
 done < domains.txt
 
-# Keep only IPv4 CIDR/IP entries, remove comments and duplicates.
-awk '
-    /^[[:space:]]*#/ { next }
-    /^[[:space:]]*$/ { next }
-    /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\/[0-9]+$/ {
-        print
-    }
-' "$TMP" |
-sort -u > "$TMP2"
+# Validate downloaded lists.
+for file in "$YT" "$TG" "$DC"; do
+    if ! grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' "$file"; then
+        echo "ERROR: downloaded list contains no valid IPv4 CIDRs"
+        exit 1
+    fi
+done
+
+# Keep valid CIDRs only.
+cat "$YT" "$TG" "$DC" "$DNS" |
+    awk '
+        /^[[:space:]]*#/ { next }
+        /^[[:space:]]*$/ { next }
+        /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\/[0-9]+$/ {
+            print
+        }
+    ' |
+    sort -u > "$ALL"
+
+YT_COUNT=$(grep -Ec '^[0-9]+\.' "$YT" || true)
+TG_COUNT=$(grep -Ec '^[0-9]+\.' "$TG" || true)
+DC_COUNT=$(grep -Ec '^[0-9]+\.' "$DC" || true)
+DNS_COUNT=$(grep -Ec '^[0-9]+\.' "$DNS" || true)
+TOTAL=$(wc -l < "$ALL" | tr -d ' ')
 
 {
     echo "# splify custom IP list"
     echo "# Generated automatically"
+    echo "#"
+    echo "# YouTube source: $YT_COUNT entries"
+    echo "# Telegram source: $TG_COUNT entries"
+    echo "# Discord source: $DC_COUNT entries"
+    echo "# DNS domains: $DNS_COUNT entries"
+    echo "# Final unique IPv4 CIDRs: $TOTAL"
+    echo "#"
     echo "# Sources:"
-    echo "# - xyzmean/ru-bypass-ipsets youtube.lst"
-    echo "# - xyzmean/ru-bypass-ipsets telegram.lst"
-    echo "# - xyzmean/ru-bypass-ipsets discord.lst"
-    echo "# - domains.txt"
+    echo "# https://github.com/xyzmean/ru-bypass-ipsets"
+    echo "# domains.txt"
     echo
-    cat "$TMP2"
+    cat "$ALL"
 } > "$OUT"
 
-echo "Generated $OUT"
-echo "Entries: $(wc -l < "$TMP2")"
+echo
+echo "========== SUMMARY =========="
+echo "YouTube:       $YT_COUNT"
+echo "Telegram:      $TG_COUNT"
+echo "Discord:       $DC_COUNT"
+echo "DNS:           $DNS_COUNT"
+echo "Final unique:  $TOTAL"
+echo "============================="
