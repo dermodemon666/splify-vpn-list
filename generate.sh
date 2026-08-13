@@ -75,6 +75,25 @@ DC_COUNT=$(grep -Ec '^[0-9]+\.' "$DC" || true)
 DNS_COUNT=$(grep -Ec '^[0-9]+\.' "$DNS" || true)
 TOTAL=$(wc -l < "$ALL" | tr -d ' ')
 
+echo
+echo "========== EXCLUDE CHECK =========="
+
+if grep -qx '8.8.4.0/24' "$ALL"; then
+    echo "ERROR: 8.8.4.0/24 is still present!"
+    exit 1
+else
+    echo "OK: 8.8.4.0/24 excluded"
+fi
+
+if grep -qx '8.8.8.0/24' "$ALL"; then
+    echo "ERROR: 8.8.8.0/24 is still present!"
+    exit 1
+else
+    echo "OK: 8.8.8.0/24 excluded"
+fi
+
+echo "===================================="
+
 {
     echo "# splify custom IP list"
     echo "# Generated automatically"
