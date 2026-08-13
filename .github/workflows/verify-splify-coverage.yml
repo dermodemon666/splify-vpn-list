@@ -1,0 +1,143 @@
+# GitHub Actions — verify splify.lst coverage
+
+```yaml
+name: Verify splify coverage
+
+on:
+  push:
+    paths:
+      - "splify.lst"
+      - "generate.sh"
+      - ".github/workflows/verify-splify-coverage.yml"
+  pull_request:
+    paths:
+      - "splify.lst"
+      - "generate.sh"
+      - ".github/workflows/verify-splify-coverage.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          python3 --version
+          curl --version
+
+      - name: Download original ipsum.lst
+        run: |
+          curl -fsSL \
+            "https://raw.githubusercontent.com/1andrevich/Re-filter-lists/master/ipsum.lst" \
+            -o /tmp/ipsum.lst
+
+      - name: Verify original ipsum coverage
+        run: |
+          python3 <<'PY'
+          import ipaddress
+          from pathlib import Path
+
+          def load(path):
+              result = []
+              for line in Path(path).read_text().splitlines():
+                  line = line.strip()
+                  if not line or line.startswith("#"):
+                      continue
+                  try:
+                      n = ipaddress.ip_network(line, strict=False)
+                  except ValueError:
+                      continue
+                  if n.version == 4:
+                      result.append(n)
+              return result
+
+          ipsum = load("/tmp/ipsum.lst")
+          splify = load("splify.lst")
+
+          print(f"Original ipsum entries: {len(ipsum)}")
+          print(f"Current splify entries: {len(splify)}")
+
+          # Normalize/merge splify networks.
+          splify = list(ipaddress.collapse_addresses(splify))
+
+          missing = []
+
+          for src in ipsum:
+              covered = any(src.subnet_of(dst) for dst in splify)
+
+              if not covered:
+                  # A source network can also be covered by several
+                  # smaller networks, so check address-range intersection.
+                  remaining = [src]
+
+                  for dst in splify:
+                      new_remaining = []
+
+                      for part in remaining:
+                          if not part.overlaps(dst):
+                              new_remaining.append(part)
+                              continue
+
+                          if dst.supernet_of(part) or dst == part:
+                              continue
+
+                          try:
+                              pieces = list(
+                                  ipaddress.address_exclude(part, dst)
+                              )
+                              new_remaining.extend(pieces)
+                          except ValueError:
+                              # dst may only partially overlap.
+                              # Fall back to exact address-space check below.
+                              new_remaining.append(part)
+
+                      remaining = new_remaining
+
+                      if not remaining:
+                          break
+
+                  if remaining:
+                      missing.append((src, remaining))
+
+          if missing:
+              print()
+              print("FAIL: original ipsum contains networks not covered")
+              print("by the generated splify.lst:")
+              print()
+
+              for src, parts in missing[:100]:
+                  print(f"  MISSING: {src}")
+
+              if len(missing) > 100:
+                  print(f"... and {len(missing) - 100} more")
+
+              raise SystemExit(1)
+
+          print()
+          print("PASS: every original ipsum network is covered")
+          print("by splify.lst.")
+          PY
+
+      - name: Check Google DNS exclusion
+        run: |
+          if grep -Eq '^8\.8\.(4|8)\.0/24$' splify.lst; then
+            echo "FAIL: Google DNS range found in splify.lst"
+            exit 1
+          fi
+
+          echo "PASS: Google DNS ranges are excluded"
+
+      - name: Show statistics
+        run: |
+          echo "========== splify.lst =========="
+          grep -Ec '^[0-9]+\.' splify.lst || true
+          echo "================================="
+          echo
+          echo "========== ipsum.lst ============"
+          grep -Ec '^[0-9]+\.' /tmp/ipsum.lst || true
+          echo "================================="
+```
