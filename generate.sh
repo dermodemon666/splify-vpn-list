@@ -7,6 +7,7 @@ TMP="$(mktemp -d)"
 YT="$TMP/youtube.lst"
 TG="$TMP/telegram.lst"
 DC="$TMP/discord.lst"
+DCVOICE="$TMP/discord-voice.lst"
 DNS="$TMP/dns.lst"
 ALL="$TMP/all.lst"
 
@@ -34,11 +35,30 @@ curl -fsSL \
     "https://raw.githubusercontent.com/xyzmean/ru-bypass-ipsets/main/lists/telegram.lst" \
     > "$TG"
 
-echo "Downloading Discord list..."
+# ------------------------------------------------------------
+# Discord: general IP list
+# ------------------------------------------------------------
+
+echo "Downloading Discord IP list..."
+
 curl -fsSL \
     "https://raw.githubusercontent.com/fildunsky/clash_discord/main/discord-ip.yaml" |
-    sed -n 's/^[[:space:]]*-[[:space:]]*IP-CIDR,\([^,]*\).*$/\1/p' \
+    sed -nE 's/^[[:space:]]*-[[:space:]]*IP-CIDR,([^,[:space:]]+).*$/\1/p' \
     > "$DC"
+
+# ------------------------------------------------------------
+# Discord: voice IP list
+#
+# This is an additional dedicated Discord voice source.
+# ------------------------------------------------------------
+
+echo "Downloading Discord voice IP list..."
+
+curl -fsSL \
+    "https://raw.githubusercontent.com/legiz-ru/sb-rule-sets/main/discord-voice-ip-list.json" |
+    sed -nE 's/.*"([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\/[0-9]+)".*/\1/p' |
+    sort -u \
+    > "$DCVOICE"
 
 # ------------------------------------------------------------
 # Resolve domains ourselves
@@ -52,15 +72,12 @@ resolve_domain() {
 
     echo "  $domain"
 
-    # Google DNS
     dig @8.8.8.8 +short A "$domain" 2>/dev/null || true
-
-    # Cloudflare DNS
     dig @1.1.1.1 +short A "$domain" 2>/dev/null || true
-
-    # Quad9
     dig @9.9.9.9 +short A "$domain" 2>/dev/null || true
 }
+
+: > "$DNS"
 
 while IFS= read -r domain; do
 
@@ -78,12 +95,13 @@ done < domains.txt
 # Validate source lists
 # ------------------------------------------------------------
 
-for file in "$YT" "$TG" "$DC"; do
+for file in "$YT" "$TG" "$DC" "$DCVOICE"; do
     if ! grep -Eq \
         '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$' \
         "$file"
     then
-        echo "ERROR: source list contains no valid IPv4 CIDRs"
+        echo "ERROR: source list contains no valid IPv4 CIDRs:"
+        echo "$file"
         exit 1
     fi
 done
@@ -106,6 +124,7 @@ cat \
     "$YT" \
     "$TG" \
     "$DC" \
+    "$DCVOICE" \
     "$TMP/dns-clean.lst" |
 awk '
     /^[[:space:]]*#/ { next }
@@ -129,6 +148,7 @@ sort -u > "$ALL"
 YT_COUNT=$(grep -Ec '^[0-9]+\.' "$YT" || true)
 TG_COUNT=$(grep -Ec '^[0-9]+\.' "$TG" || true)
 DC_COUNT=$(grep -Ec '^[0-9]+\.' "$DC" || true)
+DCVOICE_COUNT=$(grep -Ec '^[0-9]+\.' "$DCVOICE" || true)
 DNS_COUNT=$(grep -Ec '^[0-9]+\.' "$TMP/dns-clean.lst" || true)
 TOTAL=$(wc -l < "$ALL" | tr -d ' ')
 
@@ -165,12 +185,15 @@ echo "===================================="
     echo "#"
     echo "# YouTube source: $YT_COUNT entries"
     echo "# Telegram source: $TG_COUNT entries"
-    echo "# Discord source: $DC_COUNT entries"
+    echo "# Discord general source: $DC_COUNT entries"
+    echo "# Discord voice source: $DCVOICE_COUNT entries"
     echo "# DNS resolved IPv4: $DNS_COUNT entries"
     echo "# Final unique IPv4 CIDRs: $TOTAL"
     echo "#"
     echo "# Sources:"
     echo "# xyzmean/ru-bypass-ipsets"
+    echo "# fildunsky/clash_discord"
+    echo "# legiz-ru/sb-rule-sets"
     echo "# domains.txt"
     echo "# DNS: Google / Cloudflare / Quad9"
     echo
@@ -181,9 +204,10 @@ echo "===================================="
 
 echo
 echo "========== SUMMARY =========="
-echo "YouTube:       $YT_COUNT"
-echo "Telegram:      $TG_COUNT"
-echo "Discord:       $DC_COUNT"
-echo "DNS IPv4:      $DNS_COUNT"
-echo "Final unique:  $TOTAL"
+echo "YouTube:        $YT_COUNT"
+echo "Telegram:       $TG_COUNT"
+echo "Discord:        $DC_COUNT"
+echo "Discord voice:  $DCVOICE_COUNT"
+echo "DNS IPv4:       $DNS_COUNT"
+echo "Final unique:   $TOTAL"
 echo "============================="
