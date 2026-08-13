@@ -1,6 +1,6 @@
 # verify-splify-coverage.yml
 
-```yaml
+yaml
 name: Verify splify coverage
 
 "on":
