@@ -60,11 +60,14 @@ cat "$YT" "$TG" "$DC" "$DNS" |
     awk '
         /^[[:space:]]*#/ { next }
         /^[[:space:]]*$/ { next }
+
         /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\/[0-9]+$/ {
+            if ($0 == "8.8.4.0/24") next
+            if ($0 == "8.8.8.0/24") next
             print
         }
     ' |
-    sort -u > "$ALL"
+sort -u > "$ALL"
 
 YT_COUNT=$(grep -Ec '^[0-9]+\.' "$YT" || true)
 TG_COUNT=$(grep -Ec '^[0-9]+\.' "$TG" || true)
