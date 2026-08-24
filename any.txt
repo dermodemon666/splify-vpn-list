@@ -1,0 +1,1777 @@
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    192.168.1.145         192.168.1.1           DNS      90     Standard query 0x056b A relay-1a34efd1.net.anydesk.com
+
+Frame 1: Packet, 90 bytes on wire (720 bits), 90 bytes captured (720 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 192.168.1.1
+User Datagram Protocol, Src Port: 41092, Dst Port: 53
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.117626500    192.168.1.1           192.168.1.145         DNS      106    Standard query response 0x056b A relay-1a34efd1.net.anydesk.com A 162.19.139.24
+
+Frame 2: Packet, 106 bytes on wire (848 bits), 106 bytes captured (848 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 192.168.1.1, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 53, Dst Port: 41092
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.120630700    192.168.1.145         162.19.139.24         TCP      66     63906 → 443 [SYN] Seq=0 Win=65535 Len=0 MSS=1460 WS=256 SACK_PERM
+
+Frame 3: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 0.192481000    162.19.139.24         192.168.1.145         TCP      66     443 → 63906 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460 SACK_PERM WS=128
+
+Frame 4: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 0.192526000    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=1 Ack=1 Win=65280 Len=0
+
+Frame 5: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 0.197967700    192.168.1.145         162.19.139.24         TLSv1.2  270    Client Hello
+
+Frame 6: Packet, 270 bytes on wire (2160 bits), 270 bytes captured (2160 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 1, Ack: 1, Len: 216
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+      7 0.269370500    162.19.139.24         192.168.1.145         TCP      60     443 → 63906 [ACK] Seq=1 Ack=217 Win=64128 Len=0
+
+Frame 7: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1, Ack: 217, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 0.270734600    162.19.139.24         192.168.1.145         TLSv1.2  1252   Server Hello, Certificate, Server Key Exchange, Certificate Request, Server Hello Done
+
+Frame 8: Packet, 1252 bytes on wire (10016 bits), 1252 bytes captured (10016 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1, Ack: 217, Len: 1198
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+      9 0.276641400    192.168.1.145         162.19.139.24         TLSv1.2  1115   Certificate, Client Key Exchange, Certificate Verify, Change Cipher Spec, Encrypted Handshake Message
+
+Frame 9: Packet, 1115 bytes on wire (8920 bits), 1115 bytes captured (8920 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 217, Ack: 1199, Len: 1061
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     10 0.348429100    162.19.139.24         192.168.1.145         TLSv1.2  105    Change Cipher Spec, Encrypted Handshake Message
+
+Frame 10: Packet, 105 bytes on wire (840 bits), 105 bytes captured (840 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1199, Ack: 1278, Len: 51
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     11 0.348429700    162.19.139.24         192.168.1.145         TLSv1.2  94     Application Data
+
+Frame 11: Packet, 94 bytes on wire (752 bits), 94 bytes captured (752 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1250, Ack: 1278, Len: 40
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     12 0.348461100    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=1278 Ack=1290 Win=64000 Len=0
+
+Frame 12: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 1278, Ack: 1290, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     13 0.352809900    192.168.1.145         162.19.139.24         TLSv1.2  146    Application Data
+
+Frame 13: Packet, 146 bytes on wire (1168 bits), 146 bytes captured (1168 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 1278, Ack: 1290, Len: 92
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     14 0.465951500    162.19.139.24         192.168.1.145         TCP      60     443 → 63906 [ACK] Seq=1290 Ack=1370 Win=64128 Len=0
+
+Frame 14: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1290, Ack: 1370, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     15 0.516748800    162.19.139.24         192.168.1.145         TLSv1.2  200    Application Data
+
+Frame 15: Packet, 200 bytes on wire (1600 bits), 200 bytes captured (1600 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1290, Ack: 1370, Len: 146
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     16 0.541575100    192.168.1.145         162.19.139.24         TLSv1.2  503    Application Data
+
+Frame 16: Packet, 503 bytes on wire (4024 bits), 503 bytes captured (4024 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 1370, Ack: 1436, Len: 449
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     17 0.541652900    192.168.1.145         162.19.139.24         TLSv1.2  115    Application Data
+
+Frame 17: Packet, 115 bytes on wire (920 bits), 115 bytes captured (920 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 1819, Ack: 1436, Len: 61
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     18 0.598883200    192.168.1.145         162.19.139.24         TLSv1.2  1068   Application Data
+
+Frame 18: Packet, 1068 bytes on wire (8544 bits), 1068 bytes captured (8544 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 1880, Ack: 1436, Len: 1014
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     19 0.599013500    192.168.1.145         162.19.139.24         TLSv1.2  633    Application Data
+
+Frame 19: Packet, 633 bytes on wire (5064 bits), 633 bytes captured (5064 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 2894, Ack: 1436, Len: 579
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     20 0.612836300    162.19.139.24         192.168.1.145         TCP      60     443 → 63906 [ACK] Seq=1436 Ack=1819 Win=64128 Len=0
+
+Frame 20: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1436, Ack: 1819, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     21 0.612836900    162.19.139.24         192.168.1.145         TCP      60     443 → 63906 [ACK] Seq=1436 Ack=1880 Win=64128 Len=0
+
+Frame 21: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1436, Ack: 1880, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     22 0.665968000    162.19.139.24         192.168.1.145         TLSv1.2  114    Application Data
+
+Frame 22: Packet, 114 bytes on wire (912 bits), 114 bytes captured (912 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1436, Ack: 1880, Len: 60
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     23 0.665986400    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=3473 Ack=1496 Win=65280 Len=0
+
+Frame 23: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 3473, Ack: 1496, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     24 0.669545400    162.19.139.24         192.168.1.145         TLSv1.2  99     Application Data
+
+Frame 24: Packet, 99 bytes on wire (792 bits), 99 bytes captured (792 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1496, Ack: 1880, Len: 45
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     25 0.669546000    162.19.139.24         192.168.1.145         TLSv1.2  105    Application Data
+
+Frame 25: Packet, 105 bytes on wire (840 bits), 105 bytes captured (840 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1541, Ack: 1880, Len: 51
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     26 0.669560600    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=3473 Ack=1592 Win=65280 Len=0
+
+Frame 26: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 3473, Ack: 1592, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     27 0.669570600    162.19.139.24         192.168.1.145         TLSv1.2  127    Application Data
+
+Frame 27: Packet, 127 bytes on wire (1016 bits), 127 bytes captured (1016 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1592, Ack: 1880, Len: 73
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     28 0.669576100    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=3473 Ack=1665 Win=65280 Len=0
+
+Frame 28: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 3473, Ack: 1665, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     29 0.670232200    162.19.139.24         192.168.1.145         TCP      60     443 → 63906 [ACK] Seq=1665 Ack=2894 Win=64128 Len=0
+
+Frame 29: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1665, Ack: 2894, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     30 0.670232900    162.19.139.24         192.168.1.145         TCP      60     443 → 63906 [ACK] Seq=1665 Ack=3473 Win=63616 Len=0
+
+Frame 30: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1665, Ack: 3473, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     31 0.671820700    192.168.1.145         162.19.139.24         TLSv1.2  121    Application Data
+
+Frame 31: Packet, 121 bytes on wire (968 bits), 121 bytes captured (968 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 3473, Ack: 1665, Len: 67
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     32 0.673004200    192.168.1.145         162.19.139.24         TLSv1.2  634    Application Data
+
+Frame 32: Packet, 634 bytes on wire (5072 bits), 634 bytes captured (5072 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 3540, Ack: 1665, Len: 580
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     33 0.723832800    162.19.139.24         192.168.1.145         TLSv1.2  495    Application Data
+
+Frame 33: Packet, 495 bytes on wire (3960 bits), 495 bytes captured (3960 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 1665, Ack: 3473, Len: 441
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     34 0.742992500    162.19.139.24         192.168.1.145         TCP      60     443 → 63906 [ACK] Seq=2106 Ack=3540 Win=64128 Len=0
+
+Frame 34: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 2106, Ack: 3540, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     35 0.744197000    162.19.139.24         192.168.1.145         TCP      60     443 → 63906 [ACK] Seq=2106 Ack=4120 Win=64128 Len=0
+
+Frame 35: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 2106, Ack: 4120, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     36 0.765225300    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=4120 Ack=2106 Win=64768 Len=0
+
+Frame 36: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 2106, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     37 0.773599200    162.19.139.24         192.168.1.145         TLSv1.2  102    Application Data
+
+Frame 37: Packet, 102 bytes on wire (816 bits), 102 bytes captured (816 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 2106, Ack: 4120, Len: 48
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     38 0.773599800    162.19.139.24         192.168.1.145         TLSv1.2  102    Application Data
+
+Frame 38: Packet, 102 bytes on wire (816 bits), 102 bytes captured (816 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 2154, Ack: 4120, Len: 48
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     39 0.773619600    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=4120 Ack=2202 Win=64768 Len=0
+
+Frame 39: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 2202, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     40 0.773631200    162.19.139.24         192.168.1.145         TLSv1.2  102    Application Data
+
+Frame 40: Packet, 102 bytes on wire (816 bits), 102 bytes captured (816 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 2202, Ack: 4120, Len: 48
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     41 0.773632000    162.19.139.24         192.168.1.145         TLSv1.2  150    Application Data, Application Data
+
+Frame 41: Packet, 150 bytes on wire (1200 bits), 150 bytes captured (1200 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 2250, Ack: 4120, Len: 96
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     42 0.773640600    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=4120 Ack=2346 Win=64512 Len=0
+
+Frame 42: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 2346, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     43 0.804374900    162.19.139.24         192.168.1.145         TCP      1514   443 → 63906 [ACK] Seq=2346 Ack=4120 Win=64128 Len=1460 [TCP PDU reassembled in 44]
+
+Frame 43: Packet, 1514 bytes on wire (12112 bits), 1514 bytes captured (12112 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 2346, Ack: 4120, Len: 1460
+
+No.     Time           Source                Destination           Protocol Length Info
+     44 0.804377300    162.19.139.24         192.168.1.145         TLSv1.2  650    Application Data
+
+Frame 44: Packet, 650 bytes on wire (5200 bits), 650 bytes captured (5200 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 3806, Ack: 4120, Len: 596
+[2 Reassembled TCP Segments (2056 bytes): #43(1460), #44(596)]
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     45 0.804396800    192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [ACK] Seq=4120 Ack=4402 Win=65280 Len=0
+
+Frame 45: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4402, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     46 0.807271900    162.19.139.24         192.168.1.145         TLSv1.2  102    Application Data
+
+Frame 46: Packet, 102 bytes on wire (816 bits), 102 bytes captured (816 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63906, Seq: 4402, Ack: 4120, Len: 48
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     47 0.814473700    192.168.1.145         162.19.139.24         TLSv1.2  151    Application Data
+
+Frame 47: Packet, 151 bytes on wire (1208 bits), 151 bytes captured (1208 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 97
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     48 0.814584500    192.168.1.145         162.19.139.24         TLSv1.2  525    Application Data
+
+Frame 48: Packet, 525 bytes on wire (4200 bits), 525 bytes captured (4200 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4217, Ack: 4450, Len: 471
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     49 0.831565600    192.168.1.145         104.18.32.47          TCP      1454   45370 → 443 [ACK] Seq=1 Ack=1 Win=255 Len=1400
+
+Frame 49: Packet, 1454 bytes on wire (11632 bits), 1454 bytes captured (11632 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 104.18.32.47
+Transmission Control Protocol, Src Port: 45370, Dst Port: 443, Seq: 1, Ack: 1, Len: 1400
+
+No.     Time           Source                Destination           Protocol Length Info
+     50 1.114100400    192.168.1.145         162.19.139.24         TCP      622    [TCP Retransmission] 63906 → 443 [PSH, ACK] Seq=4120 Ack=4450 Win=65280 Len=568
+
+Frame 50: Packet, 622 bytes on wire (4976 bits), 622 bytes captured (4976 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 568
+
+No.     Time           Source                Destination           Protocol Length Info
+     51 1.121101500    138.199.6.179         192.168.1.145         WireGuard 190    Handshake Initiation, sender=0xBC37E355
+
+Frame 51: Packet, 190 bytes on wire (1520 bits), 190 bytes captured (1520 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     52 1.121132900    192.168.1.145         138.199.6.179         ICMP     218    Destination unreachable (Port unreachable)
+
+Frame 52: Packet, 218 bytes on wire (1744 bits), 218 bytes captured (1744 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     53 1.414557500    192.168.1.145         162.19.139.24         TCP      622    [TCP Retransmission] 63906 → 443 [PSH, ACK] Seq=4120 Ack=4450 Win=65280 Len=568
+
+Frame 53: Packet, 622 bytes on wire (4976 bits), 622 bytes captured (4976 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 568
+
+No.     Time           Source                Destination           Protocol Length Info
+     54 1.575311200    192.168.1.145         162.19.139.24         TLSv1.2  102    Application Data
+
+Frame 54: Packet, 102 bytes on wire (816 bits), 102 bytes captured (816 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4688, Ack: 4450, Len: 48
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     55 1.630736900    138.199.6.179         192.168.1.145         WireGuard 186    Transport Data, receiver=0xA62AC948, counter=14186, datalen=112
+
+Frame 55: Packet, 186 bytes on wire (1488 bits), 186 bytes captured (1488 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     56 1.630770500    192.168.1.145         138.199.6.179         ICMP     214    Destination unreachable (Port unreachable)
+
+Frame 56: Packet, 214 bytes on wire (1712 bits), 214 bytes captured (1712 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     57 2.015252000    192.168.1.145         162.19.139.24         TCP      670    [TCP Retransmission] 63906 → 443 [PSH, ACK] Seq=4120 Ack=4450 Win=65280 Len=616
+
+Frame 57: Packet, 670 bytes on wire (5360 bits), 670 bytes captured (5360 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 616
+
+No.     Time           Source                Destination           Protocol Length Info
+     58 2.807448300    192.168.1.145         162.19.139.24         TLSv1.2  113    Application Data
+
+Frame 58: Packet, 113 bytes on wire (904 bits), 113 bytes captured (904 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4736, Ack: 4450, Len: 59
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     59 3.217205500    192.168.1.145         162.19.139.24         TCP      590    [TCP Retransmission] 63906 → 443 [PSH, ACK] Seq=4120 Ack=4450 Win=65280 Len=536
+
+Frame 59: Packet, 590 bytes on wire (4720 bits), 590 bytes captured (4720 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 536
+
+No.     Time           Source                Destination           Protocol Length Info
+     60 4.150036300    138.199.6.179         192.168.1.145         WireGuard 138    Transport Data, receiver=0xA62AC948, counter=14187, datalen=64
+
+Frame 60: Packet, 138 bytes on wire (1104 bits), 138 bytes captured (1104 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     61 4.150068900    192.168.1.145         138.199.6.179         ICMP     166    Destination unreachable (Port unreachable)
+
+Frame 61: Packet, 166 bytes on wire (1328 bits), 166 bytes captured (1328 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     62 4.418374500    192.168.1.145         162.19.139.24         TCP      590    [TCP Retransmission] 63906 → 443 [PSH, ACK] Seq=4120 Ack=4450 Win=65280 Len=536
+
+Frame 62: Packet, 590 bytes on wire (4720 bits), 590 bytes captured (4720 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 536
+
+No.     Time           Source                Destination           Protocol Length Info
+     63 4.449291900    138.199.6.179         192.168.1.145         WireGuard 138    Transport Data, receiver=0xA62AC948, counter=14188, datalen=64
+
+Frame 63: Packet, 138 bytes on wire (1104 bits), 138 bytes captured (1104 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     64 4.449314200    192.168.1.145         138.199.6.179         ICMP     166    Destination unreachable (Port unreachable)
+
+Frame 64: Packet, 166 bytes on wire (1328 bits), 166 bytes captured (1328 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     65 4.766229900    138.199.6.179         192.168.1.145         WireGuard 138    Transport Data, receiver=0xA62AC948, counter=14189, datalen=64
+
+Frame 65: Packet, 138 bytes on wire (1104 bits), 138 bytes captured (1104 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     66 4.766248900    192.168.1.145         138.199.6.179         ICMP     166    Destination unreachable (Port unreachable)
+
+Frame 66: Packet, 166 bytes on wire (1328 bits), 166 bytes captured (1328 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     67 4.789503200    192.168.1.145         192.168.1.1           DNS      68     Standard query 0x43c6 A wpad.lan
+
+Frame 67: Packet, 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 192.168.1.1
+User Datagram Protocol, Src Port: 41790, Dst Port: 53
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+     68 4.790342400    192.168.1.1           192.168.1.145         DNS      68     Standard query response 0x43c6 No such name A wpad.lan
+
+Frame 68: Packet, 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 192.168.1.1, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 53, Dst Port: 41790
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+     69 5.374268200    138.199.6.179         192.168.1.145         WireGuard 138    Transport Data, receiver=0xA62AC948, counter=14190, datalen=64
+
+Frame 69: Packet, 138 bytes on wire (1104 bits), 138 bytes captured (1104 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     70 5.374295200    192.168.1.145         138.199.6.179         ICMP     166    Destination unreachable (Port unreachable)
+
+Frame 70: Packet, 166 bytes on wire (1328 bits), 166 bytes captured (1328 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     71 5.618587600    192.168.1.145         162.19.139.24         TCP      729    [TCP Retransmission] 63906 → 443 [PSH, ACK] Seq=4120 Ack=4450 Win=65280 Len=675
+
+Frame 71: Packet, 729 bytes on wire (5832 bits), 729 bytes captured (5832 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 675
+
+No.     Time           Source                Destination           Protocol Length Info
+     72 6.158463600    sunweitindus_0d:5c:11 TPLink_08:61:5e       ARP      42     Who has 192.168.1.1? Tell 192.168.1.145
+
+Frame 72: Packet, 42 bytes on wire (336 bits), 42 bytes captured (336 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Address Resolution Protocol (request)
+
+No.     Time           Source                Destination           Protocol Length Info
+     73 6.158963500    TPLink_08:61:5e       sunweitindus_0d:5c:11 ARP      60     192.168.1.1 is at 1c:61:b4:08:61:5e
+
+Frame 73: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Address Resolution Protocol (reply)
+
+No.     Time           Source                Destination           Protocol Length Info
+     74 6.194650600    TPLink_08:61:5e       sunweitindus_0d:5c:11 ARP      60     Who has 192.168.1.145? Tell 192.168.1.1
+
+Frame 74: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Address Resolution Protocol (request)
+
+No.     Time           Source                Destination           Protocol Length Info
+     75 6.194656400    sunweitindus_0d:5c:11 TPLink_08:61:5e       ARP      42     192.168.1.145 is at c4:62:37:0d:5c:11
+
+Frame 75: Packet, 42 bytes on wire (336 bits), 42 bytes captured (336 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Address Resolution Protocol (reply)
+
+No.     Time           Source                Destination           Protocol Length Info
+     76 6.239022400    138.199.6.179         192.168.1.145         WireGuard 190    Handshake Initiation, sender=0x22A27FEF
+
+Frame 76: Packet, 190 bytes on wire (1520 bits), 190 bytes captured (1520 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     77 6.239044800    192.168.1.145         138.199.6.179         ICMP     218    Destination unreachable (Port unreachable)
+
+Frame 77: Packet, 218 bytes on wire (1744 bits), 218 bytes captured (1744 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     78 6.590312300    138.199.6.179         192.168.1.145         WireGuard 138    Transport Data, receiver=0xA62AC948, counter=14191, datalen=64
+
+Frame 78: Packet, 138 bytes on wire (1104 bits), 138 bytes captured (1104 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     79 6.590332100    192.168.1.145         138.199.6.179         ICMP     166    Destination unreachable (Port unreachable)
+
+Frame 79: Packet, 166 bytes on wire (1328 bits), 166 bytes captured (1328 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     80 8.019312600    192.168.1.145         162.19.139.24         TCP      729    [TCP Retransmission] 63906 → 443 [PSH, ACK] Seq=4120 Ack=4450 Win=65280 Len=675
+
+Frame 80: Packet, 729 bytes on wire (5832 bits), 729 bytes captured (5832 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 675
+
+No.     Time           Source                Destination           Protocol Length Info
+     81 9.058448800    138.199.6.179         192.168.1.145         WireGuard 138    Transport Data, receiver=0xA62AC948, counter=14192, datalen=64
+
+Frame 81: Packet, 138 bytes on wire (1104 bits), 138 bytes captured (1104 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     82 9.058476200    192.168.1.145         138.199.6.179         ICMP     166    Destination unreachable (Port unreachable)
+
+Frame 82: Packet, 166 bytes on wire (1328 bits), 166 bytes captured (1328 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     83 10.172784700   138.199.6.179         192.168.1.145         WireGuard 186    Transport Data, receiver=0xA62AC948, counter=14193, datalen=112
+
+Frame 83: Packet, 186 bytes on wire (1488 bits), 186 bytes captured (1488 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     84 10.172810400   192.168.1.145         138.199.6.179         ICMP     214    Destination unreachable (Port unreachable)
+
+Frame 84: Packet, 214 bytes on wire (1712 bits), 214 bytes captured (1712 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     85 10.172828100   138.199.6.179         192.168.1.145         WireGuard 122    Transport Data, receiver=0xA62AC948, counter=14194, datalen=48
+
+Frame 85: Packet, 122 bytes on wire (976 bits), 122 bytes captured (976 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     86 10.172838900   192.168.1.145         138.199.6.179         ICMP     150    Destination unreachable (Port unreachable)
+
+Frame 86: Packet, 150 bytes on wire (1200 bits), 150 bytes captured (1200 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     87 10.422176400   138.199.6.179         192.168.1.145         WireGuard 122    Transport Data, receiver=0xA62AC948, counter=14195, datalen=48
+
+Frame 87: Packet, 122 bytes on wire (976 bits), 122 bytes captured (976 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     88 10.422195400   192.168.1.145         138.199.6.179         ICMP     150    Destination unreachable (Port unreachable)
+
+Frame 88: Packet, 150 bytes on wire (1200 bits), 150 bytes captured (1200 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     89 10.432413400   192.168.1.145         104.18.32.47          TCP      54     45370 → 443 [RST, ACK] Seq=1401 Ack=1 Win=0 Len=0
+
+Frame 89: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 104.18.32.47
+Transmission Control Protocol, Src Port: 45370, Dst Port: 443, Seq: 1401, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     90 10.451910500   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14196, datalen=80
+
+Frame 90: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     91 10.451929700   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 91: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     92 10.754213800   138.199.6.179         192.168.1.145         WireGuard 186    Transport Data, receiver=0xA62AC948, counter=14197, datalen=112
+
+Frame 92: Packet, 186 bytes on wire (1488 bits), 186 bytes captured (1488 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     93 10.754233800   192.168.1.145         138.199.6.179         ICMP     214    Destination unreachable (Port unreachable)
+
+Frame 93: Packet, 214 bytes on wire (1712 bits), 214 bytes captured (1712 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     94 10.782184000   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14198, datalen=80
+
+Frame 94: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     95 10.782200700   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 95: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     96 10.808970400   192.168.1.145         162.19.139.24         TCP      55     [TCP Spurious Retransmission] 63906 → 443 [ACK] Seq=4119 Ack=4450 Win=65280 Len=1
+
+Frame 96: Packet, 55 bytes on wire (440 bits), 55 bytes captured (440 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4119, Ack: 4450, Len: 1
+
+No.     Time           Source                Destination           Protocol Length Info
+     97 11.102571900   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14199, datalen=80
+
+Frame 97: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     98 11.102591400   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 98: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     99 11.358286900   138.199.6.179         192.168.1.145         WireGuard 186    Transport Data, receiver=0xA62AC948, counter=14200, datalen=112
+
+Frame 99: Packet, 186 bytes on wire (1488 bits), 186 bytes captured (1488 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    100 11.358305800   192.168.1.145         138.199.6.179         ICMP     214    Destination unreachable (Port unreachable)
+
+Frame 100: Packet, 214 bytes on wire (1712 bits), 214 bytes captured (1712 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    101 11.359548600   138.199.6.179         192.168.1.145         WireGuard 190    Handshake Initiation, sender=0x1EC93D78
+
+Frame 101: Packet, 190 bytes on wire (1520 bits), 190 bytes captured (1520 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    102 11.359561400   192.168.1.145         138.199.6.179         ICMP     218    Destination unreachable (Port unreachable)
+
+Frame 102: Packet, 218 bytes on wire (1744 bits), 218 bytes captured (1744 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    103 11.422115300   138.199.6.179         192.168.1.145         WireGuard 186    Transport Data, receiver=0xA62AC948, counter=14201, datalen=112
+
+Frame 103: Packet, 186 bytes on wire (1488 bits), 186 bytes captured (1488 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    104 11.422131500   192.168.1.145         138.199.6.179         ICMP     214    Destination unreachable (Port unreachable)
+
+Frame 104: Packet, 214 bytes on wire (1712 bits), 214 bytes captured (1712 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    105 11.730792000   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14202, datalen=80
+
+Frame 105: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    106 11.730809900   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 106: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    107 11.742421600   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14203, datalen=80
+
+Frame 107: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    108 11.742434900   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 108: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    109 12.062050400   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14204, datalen=80
+
+Frame 109: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    110 12.062068300   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 110: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    111 12.382480800   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14205, datalen=80
+
+Frame 111: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    112 12.382502700   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 112: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    113 12.734131600   138.199.6.179         192.168.1.145         WireGuard 186    Transport Data, receiver=0xA62AC948, counter=14206, datalen=112
+
+Frame 113: Packet, 186 bytes on wire (1488 bits), 186 bytes captured (1488 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    114 12.734151300   192.168.1.145         138.199.6.179         ICMP     214    Destination unreachable (Port unreachable)
+
+Frame 114: Packet, 214 bytes on wire (1712 bits), 214 bytes captured (1712 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    115 12.809198000   192.168.1.145         162.19.139.24         TCP      55     [TCP Spurious Retransmission] 63906 → 443 [ACK] Seq=4119 Ack=4450 Win=65280 Len=1
+
+Frame 115: Packet, 55 bytes on wire (440 bits), 55 bytes captured (440 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4119, Ack: 4450, Len: 1
+
+No.     Time           Source                Destination           Protocol Length Info
+    116 12.820159900   192.168.1.145         162.19.139.24         TCP      729    [TCP Retransmission] 63906 → 443 [PSH, ACK] Seq=4120 Ack=4450 Win=65280 Len=675
+
+Frame 116: Packet, 729 bytes on wire (5832 bits), 729 bytes captured (5832 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4120, Ack: 4450, Len: 675
+
+No.     Time           Source                Destination           Protocol Length Info
+    117 12.994128600   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14207, datalen=80
+
+Frame 117: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    118 12.994144400   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 118: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    119 12.994155700   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14208, datalen=80
+
+Frame 119: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    120 12.994165700   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 120: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    121 13.918567100   138.199.6.179         192.168.1.145         WireGuard 138    Transport Data, receiver=0xA62AC948, counter=14209, datalen=64
+
+Frame 121: Packet, 138 bytes on wire (1104 bits), 138 bytes captured (1104 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    122 13.918588200   192.168.1.145         138.199.6.179         ICMP     166    Destination unreachable (Port unreachable)
+
+Frame 122: Packet, 166 bytes on wire (1328 bits), 166 bytes captured (1328 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    123 14.206583400   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14210, datalen=80
+
+Frame 123: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    124 14.206601500   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 124: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    125 14.809596900   192.168.1.145         162.19.139.24         TCP      55     [TCP Spurious Retransmission] 63906 → 443 [ACK] Seq=4119 Ack=4450 Win=65280 Len=1
+
+Frame 125: Packet, 55 bytes on wire (440 bits), 55 bytes captured (440 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4119, Ack: 4450, Len: 1
+
+No.     Time           Source                Destination           Protocol Length Info
+    126 15.030820500   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14211, datalen=80
+
+Frame 126: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    127 15.030844500   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 127: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    128 15.358937000   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14212, datalen=80
+
+Frame 128: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    129 15.358957500   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 129: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    130 15.454354200   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14213, datalen=80
+
+Frame 130: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    131 15.454370200   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 131: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    132 15.454381900   138.199.6.179         192.168.1.145         WireGuard 186    Transport Data, receiver=0xA62AC948, counter=14214, datalen=112
+
+Frame 132: Packet, 186 bytes on wire (1488 bits), 186 bytes captured (1488 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    133 15.454392300   192.168.1.145         138.199.6.179         ICMP     214    Destination unreachable (Port unreachable)
+
+Frame 133: Packet, 214 bytes on wire (1712 bits), 214 bytes captured (1712 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    134 15.710510500   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14215, datalen=80
+
+Frame 134: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    135 15.710533200   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 135: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    136 16.386225200   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14216, datalen=80
+
+Frame 136: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    137 16.386255400   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 137: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    138 16.478014900   138.199.6.179         192.168.1.145         WireGuard 190    Handshake Initiation, sender=0x19C44AF3
+
+Frame 138: Packet, 190 bytes on wire (1520 bits), 190 bytes captured (1520 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    139 16.478032800   192.168.1.145         138.199.6.179         ICMP     218    Destination unreachable (Port unreachable)
+
+Frame 139: Packet, 218 bytes on wire (1744 bits), 218 bytes captured (1744 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    140 16.736057500   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14217, datalen=80
+
+Frame 140: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    141 16.736076200   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 141: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    142 16.811345500   192.168.1.145         162.19.139.24         TCP      55     [TCP Spurious Retransmission] 63906 → 443 [ACK] Seq=4119 Ack=4450 Win=65280 Len=1
+
+Frame 142: Packet, 55 bytes on wire (440 bits), 55 bytes captured (440 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4119, Ack: 4450, Len: 1
+
+No.     Time           Source                Destination           Protocol Length Info
+    143 17.698267300   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14218, datalen=80
+
+Frame 143: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    144 17.698292600   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 144: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    145 18.812540400   192.168.1.145         162.19.139.24         TCP      55     [TCP Spurious Retransmission] 63906 → 443 [ACK] Seq=4119 Ack=4450 Win=65280 Len=1
+
+Frame 145: Packet, 55 bytes on wire (440 bits), 55 bytes captured (440 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4119, Ack: 4450, Len: 1
+
+No.     Time           Source                Destination           Protocol Length Info
+    146 20.334821000   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14219, datalen=80
+
+Frame 146: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    147 20.334849700   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 147: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    148 20.578041500   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14220, datalen=80
+
+Frame 148: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    149 20.578063300   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 149: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    150 20.812532700   192.168.1.145         162.19.139.24         TCP      55     [TCP Spurious Retransmission] 63906 → 443 [ACK] Seq=4119 Ack=4450 Win=65280 Len=1
+
+Frame 150: Packet, 55 bytes on wire (440 bits), 55 bytes captured (440 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4119, Ack: 4450, Len: 1
+
+No.     Time           Source                Destination           Protocol Length Info
+    151 20.832419700   138.199.6.179         192.168.1.145         WireGuard 186    Transport Data, receiver=0xA62AC948, counter=14221, datalen=112
+
+Frame 151: Packet, 186 bytes on wire (1488 bits), 186 bytes captured (1488 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    152 20.832439800   192.168.1.145         138.199.6.179         ICMP     214    Destination unreachable (Port unreachable)
+
+Frame 152: Packet, 214 bytes on wire (1712 bits), 214 bytes captured (1712 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    153 21.598233500   138.199.6.179         192.168.1.145         WireGuard 154    Transport Data, receiver=0xA62AC948, counter=14222, datalen=80
+
+Frame 153: Packet, 154 bytes on wire (1232 bits), 154 bytes captured (1232 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    154 21.598255500   192.168.1.145         138.199.6.179         ICMP     182    Destination unreachable (Port unreachable)
+
+Frame 154: Packet, 182 bytes on wire (1456 bits), 182 bytes captured (1456 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    155 21.860276100   138.199.6.179         192.168.1.145         WireGuard 190    Handshake Initiation, sender=0xD3FBC7D9
+
+Frame 155: Packet, 190 bytes on wire (1520 bits), 190 bytes captured (1520 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 138.199.6.179, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 51820, Dst Port: 45932
+WireGuard Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    156 21.860293600   192.168.1.145         138.199.6.179         ICMP     218    Destination unreachable (Port unreachable)
+
+Frame 156: Packet, 218 bytes on wire (1744 bits), 218 bytes captured (1744 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 138.199.6.179
+Internet Control Message Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+    157 22.040321900   sunweitindus_0d:5c:11 Broadcast             ARP      42     Who has 192.168.1.1? Tell 192.168.1.145
+
+Frame 157: Packet, 42 bytes on wire (336 bits), 42 bytes captured (336 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: Broadcast (ff:ff:ff:ff:ff:ff)
+Address Resolution Protocol (request)
+
+No.     Time           Source                Destination           Protocol Length Info
+    158 22.040912600   TPLink_08:61:5e       sunweitindus_0d:5c:11 ARP      60     192.168.1.1 is at 1c:61:b4:08:61:5e
+
+Frame 158: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Address Resolution Protocol (reply)
+
+No.     Time           Source                Destination           Protocol Length Info
+    159 22.043169400   192.168.1.145         192.168.1.1           DNS      76     Standard query 0x6904 AAAA dns.msftncsi.com
+
+Frame 159: Packet, 76 bytes on wire (608 bits), 76 bytes captured (608 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 192.168.1.1
+User Datagram Protocol, Src Port: 41092, Dst Port: 53
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+    160 22.161217800   192.168.1.1           192.168.1.145         DNS      76     Standard query response 0x6904 AAAA dns.msftncsi.com
+
+Frame 160: Packet, 76 bytes on wire (608 bits), 76 bytes captured (608 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 192.168.1.1, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 53, Dst Port: 41092
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+    161 22.422196100   192.168.1.145         162.19.139.24         TCP      54     63906 → 443 [RST, ACK] Seq=4795 Ack=4450 Win=0 Len=0
+
+Frame 161: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63906, Dst Port: 443, Seq: 4795, Ack: 4450, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    162 22.453082000   192.168.1.145         162.19.139.24         TCP      66     63907 → 443 [SYN] Seq=0 Win=65535 Len=0 MSS=1460 WS=256 SACK_PERM
+
+Frame 162: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    163 22.524624200   162.19.139.24         192.168.1.145         TCP      66     443 → 63907 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460 SACK_PERM WS=128
+
+Frame 163: Packet, 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    164 22.524694600   192.168.1.145         162.19.139.24         TCP      54     63907 → 443 [ACK] Seq=1 Ack=1 Win=65280 Len=0
+
+Frame 164: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    165 22.529673700   192.168.1.145         162.19.139.24         TLSv1.2  270    Client Hello
+
+Frame 165: Packet, 270 bytes on wire (2160 bits), 270 bytes captured (2160 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 1, Ack: 1, Len: 216
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    166 22.600779200   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1 Ack=217 Win=64128 Len=0
+
+Frame 166: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1, Ack: 217, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    167 22.601823400   162.19.139.24         192.168.1.145         TLSv1.2  1252   Server Hello, Certificate, Server Key Exchange, Certificate Request, Server Hello Done
+
+Frame 167: Packet, 1252 bytes on wire (10016 bits), 1252 bytes captured (10016 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1, Ack: 217, Len: 1198
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    168 22.606763600   192.168.1.145         162.19.139.24         TLSv1.2  1115   Certificate, Client Key Exchange, Certificate Verify, Change Cipher Spec, Encrypted Handshake Message
+
+Frame 168: Packet, 1115 bytes on wire (8920 bits), 1115 bytes captured (8920 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 217, Ack: 1199, Len: 1061
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    169 22.664278400   192.168.1.145         192.168.1.1           DNS      84     Standard query 0xdef8 A ipv6.msftconnecttest.com
+
+Frame 169: Packet, 84 bytes on wire (672 bits), 84 bytes captured (672 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 192.168.1.1
+User Datagram Protocol, Src Port: 41790, Dst Port: 53
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+    170 22.665190900   192.168.1.1           192.168.1.145         DNS      260    Standard query response 0xdef8 A ipv6.msftconnecttest.com CNAME ipv6.msftconnecttest.com.edgesuite.net CNAME a1968.i6g1.akamai.net SOA n0i6g1.akamai.net
+
+Frame 170: Packet, 260 bytes on wire (2080 bits), 260 bytes captured (2080 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 192.168.1.1, Dst: 192.168.1.145
+User Datagram Protocol, Src Port: 53, Dst Port: 41790
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+    171 22.678096300   162.19.139.24         192.168.1.145         TLSv1.2  105    Change Cipher Spec, Encrypted Handshake Message
+
+Frame 171: Packet, 105 bytes on wire (840 bits), 105 bytes captured (840 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1199, Ack: 1278, Len: 51
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    172 22.678122700   162.19.139.24         192.168.1.145         TLSv1.2  94     Application Data
+
+Frame 172: Packet, 94 bytes on wire (752 bits), 94 bytes captured (752 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1250, Ack: 1278, Len: 40
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    173 22.678133100   192.168.1.145         162.19.139.24         TCP      54     63907 → 443 [ACK] Seq=1278 Ack=1290 Win=64000 Len=0
+
+Frame 173: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 1278, Ack: 1290, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    174 22.682499200   192.168.1.145         162.19.139.24         TLSv1.2  146    Application Data
+
+Frame 174: Packet, 146 bytes on wire (1168 bits), 146 bytes captured (1168 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 1278, Ack: 1290, Len: 92
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    175 22.797089000   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1290 Ack=1370 Win=64128 Len=0
+
+Frame 175: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1290, Ack: 1370, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    176 22.825035700   162.19.139.24         192.168.1.145         TLSv1.2  200    Application Data
+
+Frame 176: Packet, 200 bytes on wire (1600 bits), 200 bytes captured (1600 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1290, Ack: 1370, Len: 146
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    177 22.849516300   192.168.1.145         162.19.139.24         TLSv1.2  284    Application Data
+
+Frame 177: Packet, 284 bytes on wire (2272 bits), 284 bytes captured (2272 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 1370, Ack: 1436, Len: 230
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    178 22.849596900   192.168.1.145         162.19.139.24         TLSv1.2  115    Application Data
+
+Frame 178: Packet, 115 bytes on wire (920 bits), 115 bytes captured (920 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 1600, Ack: 1436, Len: 61
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    179 22.849918400   192.168.1.145         162.19.139.24         TLSv1.2  444    Application Data
+
+Frame 179: Packet, 444 bytes on wire (3552 bits), 444 bytes captured (3552 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 1661, Ack: 1436, Len: 390
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    180 22.849998900   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 180: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2051, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    181 22.850077200   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 181: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2114, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    182 22.850114900   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 182: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2177, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    183 22.850169600   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 183: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2240, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    184 22.850241300   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 184: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2303, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    185 22.850302500   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 185: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2366, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    186 22.850359200   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 186: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2429, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    187 22.850415800   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 187: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2492, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    188 22.850450500   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 188: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2555, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    189 22.850492200   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 189: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2618, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    190 22.850550400   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 190: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2681, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    191 22.850611100   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 191: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2744, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    192 22.850652100   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 192: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2807, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    193 22.850705700   192.168.1.145         162.19.139.24         TLSv1.2  117    Application Data
+
+Frame 193: Packet, 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2870, Ack: 1436, Len: 63
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    194 22.920381100   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=1600 Win=64128 Len=0
+
+Frame 194: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 1600, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    195 22.920381800   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=1661 Win=64128 Len=0
+
+Frame 195: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 1661, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    196 22.920806700   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2051 Win=64128 Len=0
+
+Frame 196: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2051, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    197 22.920819700   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2114 Win=64128 Len=0
+
+Frame 197: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2114, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    198 22.920820100   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2177 Win=64128 Len=0
+
+Frame 198: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2177, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    199 22.920830800   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2240 Win=64128 Len=0
+
+Frame 199: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2240, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    200 22.920831100   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2303 Win=64128 Len=0
+
+Frame 200: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2303, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    201 22.920840800   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2366 Win=64128 Len=0
+
+Frame 201: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2366, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    202 22.920847700   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2429 Win=64128 Len=0
+
+Frame 202: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2429, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    203 22.920855300   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2492 Win=64128 Len=0
+
+Frame 203: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2492, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    204 22.920862400   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2555 Win=64128 Len=0
+
+Frame 204: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2555, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    205 22.920869900   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2618 Win=64128 Len=0
+
+Frame 205: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2618, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    206 22.920880800   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2681 Win=64128 Len=0
+
+Frame 206: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2681, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    207 22.921028600   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2744 Win=64128 Len=0
+
+Frame 207: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2744, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    208 22.921346600   162.19.139.24         192.168.1.145         TCP      60     443 → 63907 [ACK] Seq=1436 Ack=2933 Win=64128 Len=0
+
+Frame 208: Packet, 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2933, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+    209 22.934583600   162.19.139.24         192.168.1.145         TLSv1.2  127    Application Data
+
+Frame 209: Packet, 127 bytes on wire (1016 bits), 127 bytes captured (1016 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: TPLink_08:61:5e (1c:61:b4:08:61:5e), Dst: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11)
+Internet Protocol Version 4, Src: 162.19.139.24, Dst: 192.168.1.145
+Transmission Control Protocol, Src Port: 443, Dst Port: 63907, Seq: 1436, Ack: 2933, Len: 73
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    210 22.975939700   192.168.1.145         162.19.139.24         TCP      54     63907 → 443 [ACK] Seq=2933 Ack=1509 Win=65280 Len=0
+
+Frame 210: Packet, 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface \Device\NPF_{6FE12403-8E00-4C5B-84CD-B6B946AD0C58}, id 0
+Ethernet II, Src: sunweitindus_0d:5c:11 (c4:62:37:0d:5c:11), Dst: TPLink_08:61:5e (1c:61:b4:08:61:5e)
+Internet Protocol Version 4, Src: 192.168.1.145, Dst: 162.19.139.24
+Transmission Control Protocol, Src Port: 63907, Dst Port: 443, Seq: 2933, Ack: 1509, Len: 0
